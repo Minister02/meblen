@@ -75,6 +75,6 @@ sendBtn.addEventListener('click', e => {
 	checkErrors();
 });
 
-mediumZoom('.zoom', {
-	margin: 20,
+mediumZoom('.zoom-img', {
+	background: '#000000e6',
 });

@@ -289,6 +289,7 @@ p {
 				transform: translate(-50%, -50%);
 				z-index: 2;
 				opacity: 0;
+				pointer-events: none;
 			}
 
 			&::after {
@@ -300,6 +301,7 @@ p {
 				height: 100%;
 				background-color: rgba(0, 0, 0, 0.35);
 				opacity: 0;
+				pointer-events: none;
 			}
 		}
 	}

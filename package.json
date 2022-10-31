@@ -25,5 +25,8 @@
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
 		"sass": "^1.55.0"
+	},
+	"dependencies": {
+		"medium-zoom": "^1.0.6"
 	}
 }

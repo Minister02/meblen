@@ -37,6 +37,10 @@
 	}
 
 	.contact {
+		&__dec-icon {
+			opacity: unset;
+		}
+
 		&__social-media {
 			width: 35%;
 			margin-bottom: 0;

@@ -3,3 +3,9 @@
 		padding: 0 1em;
 	}
 }
+
+@media(min-width: 992px){
+	.about__box-img, .about__box-text{
+		width: 50%;
+	}
+}

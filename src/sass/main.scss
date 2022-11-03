@@ -227,11 +227,12 @@ p {
 .btn {
 	display: block;
 	width: fit-content;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	padding: 0.7em 1.8em;
 	color: #fff;
 	background-color: #dda162;
 	text-transform: uppercase;
+	word-break: break-all;
 }
 
 // body
@@ -249,7 +250,7 @@ p {
 
 .about {
 	position: relative;
-	padding: 5em 0;
+	padding: 2.5em 0;
 
 	&__box {
 		position: relative;
@@ -263,7 +264,7 @@ p {
 	&__box-text,
 	&__box-img {
 		width: 100%;
-		padding: 3em;
+		padding: 1.5em;
 	}
 
 	&__box-img {
@@ -287,7 +288,7 @@ p {
 // Our brand
 
 .our-brand {
-	padding: 5em 0;
+	padding: 2.5em 0;
 	background-color: #fff;
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
 
@@ -313,7 +314,7 @@ p {
 // Realizations
 
 .realization {
-	padding: 5em 0 2em 0;
+	padding: 2.5em 0 2em 0;
 	&__box {
 		text-align: center;
 	}
@@ -435,7 +436,7 @@ p {
 	&__social-media,
 	&__form {
 		background-color: $white;
-		padding: 2.5em;
+		padding: 1.5em;
 		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
 	}
 
@@ -451,7 +452,7 @@ p {
 			bottom: -10%;
 			right: -7%;
 			width: 42%;
-			width: 250px;
+			width: 150px;
 			transform: rotate(-45deg);
 			z-index: -5;
 			opacity: 0.3;

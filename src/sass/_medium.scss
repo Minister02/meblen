@@ -15,6 +15,7 @@
 		&__box-img,
 		&__box-text {
 			width: 50%;
+			padding: 2.5em;
 		}
 	}
 
@@ -23,6 +24,7 @@
 	}
 
 	.our-brand {
+		padding: 5em 0;
 		&__one-mark {
 			width: 33%;
 			margin-bottom: 0;
@@ -45,10 +47,19 @@
 		&__social-media {
 			width: 35%;
 			margin-bottom: 0;
+
+			img {
+				width: 250px;
+			}
 		}
 
 		&__form {
 			width: 60%;
+		}
+
+		&__form,
+		&__social-media {
+			padding: 2.5em;
 		}
 	}
 }

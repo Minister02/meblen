@@ -15,7 +15,7 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
-	scroll-padding: 93px;
+	scroll-padding: 85px;
 	overflow-x: hidden;
 }
 
@@ -110,7 +110,7 @@ p {
 			transform: translateX(100%);
 		}
 	}
-	
+
 	&__list {
 		position: absolute;
 		left: 0;

@@ -24,8 +24,22 @@
 			margin-bottom: 0;
 		}
 
-		&__form{
+		&__form {
 			width: 60%;
+		}
+	}
+
+	.our-brand {
+		&__one-mark {
+			width: 33%;
+			margin-bottom: 0;
+		}
+	}
+
+	.realization {
+		.realization__single-image {
+			width: 30%;
+			height: 370px;
 		}
 	}
 }

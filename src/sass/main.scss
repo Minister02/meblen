@@ -16,7 +16,7 @@ html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 	scroll-padding: 93px;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 	font-size: 1.8rem;
 	color: $black;
 	background-color: $light-grey;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 a {

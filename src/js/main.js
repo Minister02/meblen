@@ -74,7 +74,3 @@ sendBtn.addEventListener('click', e => {
 	checkMail(email);
 	checkErrors();
 });
-
-mediumZoom('.zoom-img', {
-	background: '#000000e6',
-});

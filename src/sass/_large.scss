@@ -2,4 +2,26 @@
 	.navbar-mobile {
 		display: none;
 	}
+
+	// global settings
+
+	h1 {
+		font-size: 4rem;
+	}
+
+	// nav
+
+	.navbar {
+		&__list {
+			flex-direction: row;
+			position: static;
+			right: 0;
+		}
+	}
+
+	// hedaer
+
+	.header {
+		height: calc(100vh - 94px);
+	}
 }

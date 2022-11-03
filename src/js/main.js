@@ -84,3 +84,19 @@ const openMenu = () => {
 };
 
 burgerBtn.addEventListener('click', openMenu);
+
+// close menu
+
+const itemCloseMenu = () => {
+	const navList = document.querySelector('.navbar__list');
+	navList.classList.remove('navbar__list--active');
+};
+
+const closeMenu = () => {
+	const navItems = document.querySelectorAll('.navbar__item');
+	navItems.forEach(el => {
+		el.addEventListener('click', itemCloseMenu);
+	});
+};
+
+closeMenu();

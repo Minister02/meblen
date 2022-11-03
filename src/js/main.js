@@ -3,6 +3,7 @@ const sendBtn = document.querySelector('.contact__form-btn');
 const popup = document.querySelector('.popup');
 const allInputs = document.querySelectorAll('input');
 const footerYear = document.querySelector('.footer_year');
+const burgerBtn = document.querySelector('.burger-btn');
 
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear();
@@ -74,3 +75,12 @@ sendBtn.addEventListener('click', e => {
 	checkMail(email);
 	checkErrors();
 });
+
+// burger btn
+
+const openMenu = () => {
+	const navList = document.querySelector('.navbar__list');
+	navList.classList.toggle('navbar__list--active');
+};
+
+burgerBtn.addEventListener('click', openMenu);

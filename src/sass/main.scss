@@ -97,6 +97,10 @@ p {
 		img {
 			height: 100%;
 			max-height: 94px;
+			transition: opacity 0.3s;
+			&:hover {
+				opacity: 0.9;
+			}
 		}
 	}
 
@@ -116,15 +120,22 @@ p {
 		left: 0;
 		display: flex;
 		flex-direction: column;
+		height: calc(100vh - 85px);
 
 		a {
 			color: $black;
 			padding: 2em;
+			font-weight: 500;
 			transition: background-color 0.2s, color 0.2s;
 
 			&:hover {
-				color: $white;
-				background-color: $light-brown;
+				color: $light-brown;
+				// background-color: $light-brown;
+			}
+
+			&.active {
+				// background-color: $light-brown;
+				color: $light-brown;
 			}
 		}
 
@@ -226,13 +237,54 @@ p {
 
 .btn {
 	display: block;
+	position: relative;
 	width: fit-content;
 	font-size: 1.8rem;
 	padding: 0.7em 1.8em;
-	color: #fff;
-	background-color: #dda162;
+	color: $light-brown;
+	background-color: transparent;
+	border: 2px solid $light-brown;
 	text-transform: uppercase;
 	word-break: break-all;
+	transition: transform 0.1s, color 0.2s;
+	overflow: hidden;
+
+	&::before,
+	&::after {
+		display: block;
+		content: '';
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 50%;
+		background-color: $light-brown;
+		transition: transform 0.2s;
+	}
+
+	&::before {
+		top: 0;
+		z-index: -1;
+		transform: translateX(-100%);
+	}
+
+	&::after {
+		bottom: 0;
+		z-index: -1;
+		transform: translateX(100%);
+	}
+
+	&:hover::before,
+	&:hover::after {
+		transform: translateX(0);
+	}
+
+	&:hover {
+		color: $white;
+	}
+
+	&:active {
+		transform: scale(0.96);
+	}
 }
 
 // body
@@ -259,6 +311,7 @@ p {
 		background-color: #ffffff;
 		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
 		z-index: 1;
+		overflow: hidden;
 	}
 
 	&__box-text,
@@ -446,6 +499,7 @@ p {
 		width: 100%;
 		z-index: 1;
 		margin-bottom: 2.5em;
+		transition: color 0.3s;
 
 		img {
 			position: absolute;
@@ -456,6 +510,13 @@ p {
 			transform: rotate(-45deg);
 			z-index: -5;
 			opacity: 0.3;
+		}
+	}
+
+	.social-icon {
+		transition: color 0.3s;
+		&:hover {
+			color: $light-brown;
 		}
 	}
 

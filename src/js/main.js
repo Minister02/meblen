@@ -1,9 +1,15 @@
+AOS.init();
+
 const email = document.querySelector('#email');
 const sendBtn = document.querySelector('.contact__form-btn');
 const popup = document.querySelector('.popup');
 const allInputs = document.querySelectorAll('input');
 const footerYear = document.querySelector('.footer_year');
 const burgerBtn = document.querySelector('.burger-btn');
+const navbar = document.querySelector('.navbar');
+const menuItems = document.querySelectorAll('.navbar__item');
+const scrollSpySections = document.querySelectorAll('.scrollspy');
+const sections = document.querySelectorAll('.section');
 
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear();
@@ -103,3 +109,71 @@ const closeMenu = () => {
 };
 
 closeMenu();
+
+// scroll spy
+
+const handleScrollSpy = () => {
+	if (document.body.classList.contains('main-page')) {
+		const sections = [];
+
+		scrollSpySections.forEach(section => {
+			// console.log(window.offsetTop);
+
+			if (
+				window.scrollY <=
+				section.offsetTop + section.offsetHeight - navbar.offsetHeight - 1
+			) {
+				sections.push(section);
+
+				const activeSection = document.querySelector(
+					`[href*="${sections[0].id}"]`
+				);
+
+				menuItems.forEach(item => item.classList.remove('active'));
+
+				activeSection.classList.add('active');
+			}
+
+			if (window.innerHeight + window.scrollY > document.body.offsetHeight) {
+				const lastSection = document.querySelector('.navbar-item:last-of-type');
+
+				menuItems.forEach(item => item.classList.remove('active'));
+
+				lastSection.classList.add('.active');
+			}
+
+			// 	if (window.innerHeight + window.scrollY < document.body.offsetHeight) {
+			// 		const firstSection = document.querySelector(
+			// 			'.navbar-item:first-of-type'
+			// 		);
+
+			// 		menuItems.forEach(item => item.classList.remove('active'));
+
+			// 		firstSection.classList.add('.active');
+			// 	}
+		});
+	}
+};
+
+window.addEventListener('scroll', handleScrollSpy);
+
+// const options = {
+// 	threshold: [0.5, 0.9],
+// };
+
+// const handleScrollspy = entries => {
+// 	entries.forEach(entry => {
+// 		const activeNav = document.querySelector(`[href='#${entry.target.id}']`);
+
+// 		if (entry.isIntersecting) {
+// 			menuItems.forEach(item => item.classList.remove('active'));
+// 			activeNav.classList.add('active');
+// 		}
+// 	});
+// };
+
+// const observer = new IntersectionObserver(handleScrollspy, options);
+
+// sections.forEach(section => {
+// 	observer.observe(section);
+// });

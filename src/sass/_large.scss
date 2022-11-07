@@ -32,6 +32,21 @@
 			flex-direction: row;
 			position: static;
 			right: 0;
+			height: unset;
+
+			a {
+				font-weight: 400;
+
+				&:hover {
+					color: $white;
+					background-color: $light-brown;
+				}
+
+				&.active {
+					color: $white;
+					background-color: $light-brown;
+				}
+			}
 		}
 
 		.burger-btn {

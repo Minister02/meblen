@@ -10,6 +10,9 @@ const navbar = document.querySelector('.navbar');
 const menuItems = document.querySelectorAll('.navbar__item');
 const scrollSpySections = document.querySelectorAll('.scrollspy');
 const sections = document.querySelectorAll('.section');
+const allImages = document.querySelectorAll('.zoom-img');
+const closeButton = document.querySelector('.close-btn');
+const popupBox = document.querySelector('.popup-img');
 
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear();
@@ -117,8 +120,6 @@ const handleScrollSpy = () => {
 		const sections = [];
 
 		scrollSpySections.forEach(section => {
-			// console.log(window.offsetTop);
-
 			if (
 				window.scrollY <=
 				section.offsetTop + section.offsetHeight - navbar.offsetHeight - 1
@@ -141,39 +142,27 @@ const handleScrollSpy = () => {
 
 				lastSection.classList.add('.active');
 			}
-
-			// 	if (window.innerHeight + window.scrollY < document.body.offsetHeight) {
-			// 		const firstSection = document.querySelector(
-			// 			'.navbar-item:first-of-type'
-			// 		);
-
-			// 		menuItems.forEach(item => item.classList.remove('active'));
-
-			// 		firstSection.classList.add('.active');
-			// 	}
 		});
 	}
 };
 
 window.addEventListener('scroll', handleScrollSpy);
 
-// const options = {
-// 	threshold: [0.5, 0.9],
-// };
+// zoom img
 
-// const handleScrollspy = entries => {
-// 	entries.forEach(entry => {
-// 		const activeNav = document.querySelector(`[href='#${entry.target.id}']`);
+allImages.forEach(el => {
+	el.addEventListener('click', () => {
+		const popupImg = document.querySelector('.popup-img img');
+		popupBox.style.display = 'block';
+		popupImg.src = el.getAttribute('src');
+		popupImg.alt = el.getAttribute('alt');
+	});
+});
 
-// 		if (entry.isIntersecting) {
-// 			menuItems.forEach(item => item.classList.remove('active'));
-// 			activeNav.classList.add('active');
-// 		}
-// 	});
-// };
+// close img
 
-// const observer = new IntersectionObserver(handleScrollspy, options);
+const closingPopup = () => {
+	popupBox.style.display = 'none';
+};
 
-// sections.forEach(section => {
-// 	observer.observe(section);
-// });
+closeButton.addEventListener('click', closingPopup);

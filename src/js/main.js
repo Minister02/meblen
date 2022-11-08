@@ -175,3 +175,24 @@ document.addEventListener('keyup', escapeKeyCheck);
 
 closeButton.addEventListener('click', closingPopup);
 popupBox.addEventListener('click', closingPopup);
+
+// cookies
+
+const cookieBox = document.querySelector('.cookie-alert');
+const cookieBtn = document.querySelector('.cookie-btn');
+
+const showCookie = () => {
+	const cookieEaten = localStorage.getItem('cookie');
+
+	if (cookieEaten) {
+		cookieBox.classList.add('hide');
+	}
+};
+
+const handleCookieBBox = () => {
+	localStorage.setItem('cookie', 'true');
+	cookieBox.classList.add('hide');
+};
+
+cookieBtn.addEventListener('click', handleCookieBBox);
+showCookie();

@@ -651,6 +651,39 @@ p {
 	}
 }
 
+// cookie alert
+
+.cookie-alert {
+	position: fixed;
+	bottom: 0;
+	padding: 2em;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	background-color: $white;
+	box-shadow: 0 0 10px $black;
+	opacity: 0;
+	transform: translateY(100%);
+	animation: show-cookies 0.5s 0.5s forwards;
+	z-index: 100;
+
+	.cookie-btn {
+		background-color: $light-brown;
+		padding: 0.7em 1.8em;
+		font-size: 1.6rem;
+		border: 0;
+		color: $white;
+		cursor: pointer;
+		transition: transform 0.1s;
+	}
+
+	&.hide {
+		display: none;
+	}
+}
+
 // popup image
 
 .popup-img {
@@ -681,6 +714,15 @@ p {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		max-width: 95%;
+	}
+}
+
+// keyframes
+
+@keyframes show-cookies {
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 

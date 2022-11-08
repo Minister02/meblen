@@ -165,4 +165,13 @@ const closingPopup = () => {
 	popupBox.style.display = 'none';
 };
 
+const escapeKeyCheck = e => {
+	if (e.key === 'Escape') {
+		closingPopup();
+	}
+};
+
+document.addEventListener('keyup', escapeKeyCheck);
+
 closeButton.addEventListener('click', closingPopup);
+popupBox.addEventListener('click', closingPopup);

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meblen Design</title>
+    <title>Meblen Design - Nie znaleziono strony</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +16,45 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-desktop">
+    <div class="container">
+        <div class="navbar__nav">
+            <div class="navbar__icon">
+                <a href="/#">
+                    <img src="./dist/img/logo.svg" alt="Meblen Design">
+                </a>
+            </div>
+            <button class="burger-btn" type="button" aria-label="Hamburger Menu">
+                <div class="burger-btn__box">
+                    <div class="burger-btn__bars">
+                    </div>
+                </div>
+            </button>
+            <div class="navbar__list">
+                <a class="navbar__item" href="/#o-nas">O nas</a>
+                <a class="navbar__item" href="/#realizacje">Realizacje</a>
+                <a class="navbar__item" href="/#kontakt">Kontakt</a>
+            </div>
+        </div>
+    </div>
+</nav>
+    <div class="error-site">
+        <div class="container">
+            <div class="error-site__box">
+                <h2 class="error-site__title">404 error</h2>
+                <p class="error-site__text">Nie znaleziono takiej strony!</p>
+            </div>
+        </div>
+        <img class="error-site__icon error-site__icon--bottom" src="./dist/img/help-circle.svg" alt="">
+        <img class="error-site__icon error-site__icon--top" src="./dist/img/help-circle.svg" alt="">
+    </div>
     <footer class="footer">
     <div class="container">
         <p>&copy; <span class="footer_year"></span> Meblen Design</p>
     </div>
 </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="./dist/js/main.min.js"></script>
 </body>
 
 </html>

@@ -178,7 +178,7 @@ popupBox.addEventListener('click', closingPopup);
 
 // cookies
 
-const cookieBox = document.querySelector('.cookie-alert');
+const cookieBox = document.querySelector('.cookie-box');
 const cookieBtn = document.querySelector('.cookie-btn');
 
 const showCookie = () => {

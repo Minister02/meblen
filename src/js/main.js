@@ -130,7 +130,6 @@ const handleScrollSpy = () => {
 				);
 
 				menuItems.forEach(item => item.classList.remove('active'));
-
 				activeSection.classList.add('active');
 			}
 
@@ -140,6 +139,10 @@ const handleScrollSpy = () => {
 				menuItems.forEach(item => item.classList.remove('active'));
 
 				lastSection.classList.add('.active');
+			}
+
+			if (window.scrollY <= sections[0].offsetTop - navbar.offsetHeight - 1) {
+				menuItems.forEach(item => item.classList.remove('active'));
 			}
 		});
 	}

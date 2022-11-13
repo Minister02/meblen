@@ -158,8 +158,6 @@ allImages.forEach(el => {
 	});
 });
 
-// close img
-
 const closingPopup = () => {
 	popupBox.style.display = 'none';
 };

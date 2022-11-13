@@ -18,7 +18,11 @@
 	}
 
 	.about {
-		padding: 5em 0;
+		padding-top: 5em;
+
+		&__parent-box {
+			padding-bottom: 5em;
+		}
 
 		&__box-img,
 		&__box-text {

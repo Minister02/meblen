@@ -31,7 +31,6 @@ const showError = (input, msg) => {
 
 const clearError = input => {
 	const formBox = input.parentElement;
-	console.log(formBox);
 	formBox.classList.remove('error');
 };
 
@@ -172,7 +171,6 @@ const escapeKeyCheck = e => {
 };
 
 document.addEventListener('keyup', escapeKeyCheck);
-
 closeButton.addEventListener('click', closingPopup);
 popupBox.addEventListener('click', closingPopup);
 

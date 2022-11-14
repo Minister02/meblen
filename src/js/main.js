@@ -34,6 +34,7 @@ const prepareDOMEvents = () => {
 	document.addEventListener('keyup', escapeKeyCheck);
 	closeButton.addEventListener('click', closingPopup);
 	popupBox.addEventListener('click', closingPopup);
+	burgerBtn.addEventListener('click', openMenu);
 };
 
 const handleCurrentYear = () => {

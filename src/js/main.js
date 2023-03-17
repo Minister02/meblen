@@ -96,6 +96,8 @@ const checkErrors = () => {
 	}
 };
 
+// git newCheckForm
+
 // burger btn
 
 const openMenu = () => {

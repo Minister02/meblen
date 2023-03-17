@@ -2,6 +2,7 @@ const email = document.querySelector('#email');
 const sendBtn = document.querySelector('.contact__form-btn');
 const popup = document.querySelector('.popup');
 const allInputs = document.querySelectorAll('input');
+const form = document.getElementById('form');
 const footerYear = document.querySelector('.footer_year');
 const burgerBtn = document.querySelector('.burger-btn');
 const navbar = document.querySelector('.navbar');
@@ -57,8 +58,8 @@ const clearError = input => {
 
 const checkForm = input => {
 	input.forEach(el => {
-		if (el.value === '') {
-			showError(el, 'Uzupełnij pole *');
+		if (el.value.trim() === '') {
+			showError(el, 'To pole nie może pozostać puste');
 		} else {
 			clearError(el);
 		}
@@ -69,8 +70,10 @@ const checkMail = email => {
 	const re =
 		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-	if (re.test(email.value)) {
+	if (re.test(email.value.trim())) {
 		clearError(email);
+	} else if (email.value.trim() === '') {
+		showError(email, 'To pole nie może pozostać puste');
 	} else {
 		showError(email, 'E-mail jest niepoprawny');
 	}

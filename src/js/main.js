@@ -23,6 +23,8 @@ const main = () => {
 	closeMenu();
 };
 
+console.log('object');
+
 const prepareDOMEvents = () => {
 	form.addEventListener('submit', e => {
 		e.preventDefault();

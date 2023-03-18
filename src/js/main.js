@@ -24,12 +24,16 @@ const main = () => {
 };
 
 const prepareDOMEvents = () => {
-	sendBtn.addEventListener('click', e => {
+	form.addEventListener('submit', e => {
 		e.preventDefault();
 		checkForm(allInputs);
 		checkMail(email);
 		checkErrors();
+		// if(checkErrors && checkMail){
+		// 	form.addEventListener('')
+		// }
 	});
+	form.addEventListener('submit', checkFormSubmission);
 	window.addEventListener('scroll', handleScrollSpy);
 	cookieBtn.addEventListener('click', handleCookieBBox);
 	document.addEventListener('keyup', escapeKeyCheck);
@@ -41,6 +45,10 @@ const prepareDOMEvents = () => {
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear();
 	footerYear.innerText = year;
+};
+
+const checkFormSubmission = e => {
+	e.preventDefault();
 };
 
 const showError = (input, msg) => {
@@ -72,10 +80,13 @@ const checkMail = email => {
 
 	if (re.test(email.value.trim())) {
 		clearError(email);
+		return false;
 	} else if (email.value.trim() === '') {
 		showError(email, 'To pole nie może pozostać puste');
+		return true;
 	} else {
 		showError(email, 'E-mail jest niepoprawny');
+		return true;
 	}
 };
 
@@ -97,6 +108,8 @@ const checkErrors = () => {
 		popup.classList.add('show-popup');
 		setTimeout(closePopup, 2000);
 	}
+
+	return errorCount;
 };
 
 // burger btn

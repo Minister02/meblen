@@ -114,26 +114,24 @@
                         </div>
                         <div class="contact__form" data-aos="fade-left" data-aos-duration="1000">
                             <h3 class="underline">formularz kontaktowy</h3>
-                            <form action="" class="POST" class="contact__form">
+                            <form action="" class="POST" class="contact__form" id="form">
                                 <div class="contact__form-box">
-                                    <input type="text" id="name" placeholder="Imię i nazwisko">
+                                    <input type="text" id="name" placeholder="Imię i nazwisko" required />
                                     <label for="name">Imię i nazwisko</label>
-                                    <p class="error-text"></p>
                                 </div>
                                 <div class="contact__form-box">
-                                    <input type="text" id="subject" placeholder="Temat">
+                                    <input type="text" id="subject" placeholder="Temat" required />
                                     <label for="subject">Temat</label>
-                                    <p class="error-text"></p>
                                 </div>
                                 <div class="contact__form-box">
-                                    <input type="mail" id="email" placeholder="Email">
+                                    <input type="mail" id="email" placeholder="Email" required />
                                     <label for="mail">E-mail</label>
                                     <p class="error-text"></p>
                                 </div>
                                 <div class="contact__form-box">
-                                    <textarea id="msg" cols="20" rows="10" placeholder="Treść wiadomości"></textarea>
+                                    <textarea id="msg" cols="20" rows="10" placeholder="Treść wiadomości"
+                                        required></textarea>
                                     <label Sfor="msg">Treść wiadomości</label>
-                                    <p class="error-text"></p>
                                 </div>
                                 <button type="submit" class="contact__form-btn">Wyślij</button>
                                 <div class="popup">

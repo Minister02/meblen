@@ -7,37 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meblen Design</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/55829eeed8.js" crossorigin="anonymous"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./dist/css/main.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/55829eeed8.js" crossorigin="anonymous"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="./dist/css/main.min.css">
 </head>
 
 <body class="main-page">
     <nav class="navbar navbar-desktop">
-        <div class="container">
-            <div class="navbar__nav">
-                <div class="navbar__icon">
-                    <a href="#">
-                        <img src="./dist/img/logo.svg" alt="Meblen Design">
-                    </a>
-                </div>
-                <button class="burger-btn" type="button" aria-label="Hamburger Menu">
-                    <div class="burger-btn__box">
-                        <div class="burger-btn__bars">
-                        </div>
+    <div class="container">
+        <div class="navbar__nav">
+            <div class="navbar__icon">
+                <a href="#">
+                    <img src="./dist/img/logo.svg" alt="Meblen Design">
+                </a>
+            </div>
+            <button class="burger-btn" type="button" aria-label="Hamburger Menu">
+                <div class="burger-btn__box">
+                    <div class="burger-btn__bars">
                     </div>
-                </button>
-                <div class="navbar__list">
-                    <a class="navbar__item" href="#o-nas">O nas</a>
-                    <a class="navbar__item" href="#realizacje">Realizacje</a>
-                    <a class="navbar__item" href="#kontakt">Kontakt</a>
                 </div>
+            </button>
+            <div class="navbar__list">
+                <a class="navbar__item" href="#o-nas">O nas</a>
+                <a class="navbar__item" href="#realizacje">Realizacje</a>
+                <a class="navbar__item" href="#kontakt">Kontakt</a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
     <header class="header" data-scroll="scrollspy">
         <div class="container">
             <div class="header__box" data-aos="fade-right" data-aos-duration="1500">
@@ -141,26 +141,24 @@
                         </div>
                         <div class="contact__form" data-aos="fade-left" data-aos-duration="1000">
                             <h3 class="underline">formularz kontaktowy</h3>
-                            <form action="" class="POST" class="contact__form">
+                            <form action="" class="POST" class="contact__form" id="form">
                                 <div class="contact__form-box">
-                                    <input type="text" id="name" placeholder="Imię i nazwisko">
+                                    <input type="text" id="name" placeholder="Imię i nazwisko" required />
                                     <label for="name">Imię i nazwisko</label>
-                                    <p class="error-text"></p>
                                 </div>
                                 <div class="contact__form-box">
-                                    <input type="text" id="subject" placeholder="Temat">
+                                    <input type="text" id="subject" placeholder="Temat" required />
                                     <label for="subject">Temat</label>
-                                    <p class="error-text"></p>
                                 </div>
                                 <div class="contact__form-box">
-                                    <input type="mail" id="email" placeholder="Email">
+                                    <input type="mail" id="email" placeholder="Email" required />
                                     <label for="mail">E-mail</label>
                                     <p class="error-text"></p>
                                 </div>
                                 <div class="contact__form-box">
-                                    <textarea id="msg" cols="20" rows="10" placeholder="Treść wiadomości"></textarea>
+                                    <textarea id="msg" cols="20" rows="10" placeholder="Treść wiadomości"
+                                        required></textarea>
                                     <label Sfor="msg">Treść wiadomości</label>
-                                    <p class="error-text"></p>
                                 </div>
                                 <button type="submit" class="contact__form-btn">Wyślij</button>
                                 <div class="popup">
@@ -174,22 +172,21 @@
         </section>
     </main>
     <div class="cookie-box">
-        <div class="container">
-            <p>Informujemy, że nasza strona korzysta z tzw. ciasteczek, np. w celu monitorowania ruchu na
-                stronie. Więcej informacji w <a href="/polityka-prywatnosci.html" target="_blank">polityka
-                    prywatności</a>.
-            </p>
-            <button class="cookie-btn">Akceptuję</button>
-        </div>
+    <div class="container">
+        <p>Informujemy, że nasza strona korzysta z tzw. ciasteczek, np. w celu monitorowania ruchu na
+            stronie. Więcej informacji w <a href="/polityka-prywatnosci.html" target="_blank">polityka prywatności</a>.
+        </p>
+        <button class="cookie-btn">Akceptuję</button>
     </div>
+</div>
     <footer class="footer">
-        <div class="container">
-            <p>&copy; <span class="footer_year"></span> Meblen Design</p>
-        </div>
-    </footer>
+    <div class="container">
+        <p>&copy; <span class="footer_year"></span> Meblen Design</p>
+    </div>
+</footer>
     <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script defer src="./dist/js/aos.min.js"></script>
-    <script defer src="./dist/js/main.min.js"></script>
+<script defer src="./dist/js/aos.min.js"></script>
+<script defer src="./dist/js/main.min.js"></script>
 </body>
 
 </html>

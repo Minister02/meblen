@@ -2,7 +2,8 @@ const email = document.querySelector('#email');
 const sendBtn = document.querySelector('.contact__form-btn');
 const popup = document.querySelector('.popup');
 const allInputs = document.querySelectorAll('input');
-const form = document.getElementById('form');
+const textArea = document.querySelector('#msg');
+// const form = document.getElementById('form');
 const footerYear = document.querySelector('.footer_year');
 const burgerBtn = document.querySelector('.burger-btn');
 const navbar = document.querySelector('.navbar');
@@ -23,16 +24,20 @@ const main = () => {
 	closeMenu();
 };
 
-console.log('object');
-
 const prepareDOMEvents = () => {
 	form.addEventListener('submit', e => {
 		e.preventDefault();
-		checkForm(allInputs);
-		checkMail(email);
-		checkErrors();
+		if (checkMail(email)) {
+			popup.classList.add('show-popup');
+			setTimeout(closePopup, 2000);
+			clearInputs(allInputs);
+			clearError(email);
+		} else {
+			showError(email, 'Podany adres mailowy jest niepoprawny');
+			return false;
+		}
 	});
-	form.addEventListener('submit', checkFormSubmission);
+
 	window.addEventListener('scroll', handleScrollSpy);
 	cookieBtn.addEventListener('click', handleCookieBBox);
 	document.addEventListener('keyup', escapeKeyCheck);
@@ -44,10 +49,6 @@ const prepareDOMEvents = () => {
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear();
 	footerYear.innerText = year;
-};
-
-const checkFormSubmission = e => {
-	e.preventDefault();
 };
 
 const showError = (input, msg) => {
@@ -63,53 +64,50 @@ const clearError = input => {
 	formBox.classList.remove('error');
 };
 
-const checkForm = input => {
-	input.forEach(el => {
-		if (el.value.trim() === '') {
-			showError(el, 'To pole nie może pozostać puste');
-		} else {
-			clearError(el);
-		}
+const clearInputs = inputs => {
+	inputs.forEach(item => {
+		item.value = '';
 	});
+	textArea.value = '';
 };
 
-const checkMail = email => {
-	const re =
-		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+// const checkForm = inputs => {
+// 	inputs.forEach(el => {
+// 		if (el.value.trim() === '') {
+// 			showError(el, 'To pole nie może pozostać puste');
+// 		} else {
+// 			clearError(el);
+// 		}
+// 	});
+// };
 
-	if (re.test(email.value.trim())) {
-		clearError(email);
-		return false;
-	} else if (email.value.trim() === '') {
-		showError(email, 'To pole nie może pozostać puste');
-		return true;
-	} else {
-		showError(email, 'E-mail jest niepoprawny');
-		return true;
-	}
+const checkMail = email => {
+	return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+		email.value.trim()
+	);
 };
 
 const closePopup = () => {
 	popup.classList.remove('show-popup');
 };
 
-const checkErrors = () => {
-	const allFormBoxes = document.querySelectorAll('.contact__form-box');
-	let errorCount = 0;
+// const checkErrors = () => {
+// 	const allFormBoxes = document.querySelectorAll('.contact__form-box');
+// 	let errorCount = 0;
 
-	allFormBoxes.forEach(el => {
-		if (el.classList.contains('error')) {
-			errorCount++;
-		}
-	});
+// 	allFormBoxes.forEach(el => {
+// 		if (el.classList.contains('error')) {
+// 			errorCount++;
+// 		}
+// 	});
 
-	if (errorCount === 0) {
-		popup.classList.add('show-popup');
-		setTimeout(closePopup, 2000);
-	}
-
-	return errorCount;
-};
+// 	if (errorCount === 0) {
+// 		popup.classList.add('show-popup');
+// 		setTimeout(closePopup, 2000);
+// 	} else {
+// 		return false;
+// 	}
+// };
 
 // burger btn
 

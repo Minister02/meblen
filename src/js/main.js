@@ -29,9 +29,6 @@ const prepareDOMEvents = () => {
 		checkForm(allInputs);
 		checkMail(email);
 		checkErrors();
-		// if(checkErrors && checkMail){
-		// 	form.addEventListener('')
-		// }
 	});
 	form.addEventListener('submit', checkFormSubmission);
 	window.addEventListener('scroll', handleScrollSpy);

@@ -1,6 +1,6 @@
 // imports
 
-@use 'colors' as *;
+@use 'utilities/colors' as *;
 
 // start css
 
@@ -775,6 +775,11 @@ p {
 	&__title {
 		font-weight: 600;
 	}
+
+	&__list {
+		list-style-position: inside;
+		margin-bottom: 2em;
+	}
 }
 
 // keyframes
@@ -786,7 +791,6 @@ p {
 	}
 }
 
-// media queries
-@import 'small';
-@import 'medium';
-@import 'large';
+@import 'utilities/small';
+@import 'utilities/medium';
+@import 'utilities/large';

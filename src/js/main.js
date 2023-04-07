@@ -34,7 +34,7 @@ const prepareDOMEvents = () => {
 			clearError(email);
 		} else {
 			showError(email, 'Podany adres mailowy jest niepoprawny');
-			return false;
+			return;
 		}
 	});
 

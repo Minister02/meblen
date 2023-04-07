@@ -492,6 +492,11 @@ p {
 		}
 	}
 
+	&__form-box a {
+		display: inline-block;
+		color: $light-brown;
+	}
+
 	&__social-media,
 	&__form {
 		background-color: $white;
